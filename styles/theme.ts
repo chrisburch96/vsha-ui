@@ -26,6 +26,14 @@ export const theme = {
       900: "#101223",
     },
   },
+  spacing: {
+    xxs: "2px",
+    xs: "4px",
+    s: "8px",
+    m: "16px",
+    l: "32px",
+    xl: "64px",
+  },
   typography: {
     title: {
       fontFamily: "Caveat",

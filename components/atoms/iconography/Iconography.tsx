@@ -1,6 +1,7 @@
 import {
   faFacebook,
   faInstagram,
+  faSpotify,
   faTiktok,
   faTwitter,
   faYoutube,
@@ -14,7 +15,7 @@ const twitterUrl = "https://www.twitter.com/vshaofficial";
 
 const StyledIcon = styled(FontAwesomeIcon)`
   color: ${(props) => props.theme.colors.neutral[100]};
-  font-size: ${(props) => props.theme.typography.text.fontSize};
+  font-size: ${(props) => props.theme.typography.caption.fontSize};
   &:hover,
   :focus {
     color: ${(props) => props.theme.colors.primaryBlue[100]};
@@ -35,6 +36,8 @@ export const InstagramIcon = () => (
     <StyledIcon icon={faInstagram} />
   </a>
 );
+
+export const SpotifyIcon = () => <StyledIcon icon={faSpotify} />;
 
 export const TikTokIcon = () => <StyledIcon icon={faTiktok} />;
 

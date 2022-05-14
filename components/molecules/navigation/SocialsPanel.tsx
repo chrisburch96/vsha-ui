@@ -6,6 +6,7 @@ import {
   FacebookIcon,
   InstagramIcon,
   Row,
+  SpotifyIcon,
   TikTokIcon,
   TwitterIcon,
   YoutubeIcon,
@@ -19,6 +20,7 @@ export const SocialsPanel: FC = () => (
   <SocialsPanelContainer>
     <FacebookIcon />
     <InstagramIcon />
+    <SpotifyIcon />
     <TikTokIcon />
     <TwitterIcon />
     <YoutubeIcon />

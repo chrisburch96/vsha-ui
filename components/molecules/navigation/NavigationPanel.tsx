@@ -10,9 +10,9 @@ const NavigationPanelContainer = styled(Row)`
 
 export const NavigationPanel: FC = () => (
   <NavigationPanelContainer>
-    <NavLink href="/" text="Home" />
-    <NavLink href="/music" text="Music" />
-    <NavLink href="/news" text="News" />
-    <NavLink href="/store" text="Store" />
+    <NavLink href="/">Home</NavLink>
+    <NavLink href="/music">Music</NavLink>
+    <NavLink href="/news">News</NavLink>
+    <NavLink href="/store">Store</NavLink>
   </NavigationPanelContainer>
 );

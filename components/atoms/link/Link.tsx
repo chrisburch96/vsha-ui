@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 
 import Link from "next/link";
 import styled from "styled-components";
@@ -23,12 +23,12 @@ const StyledLink = styled.a`
 `;
 
 interface INavLinkProps {
+  children?: ReactNode;
   href: string;
-  text: string;
 }
 
-export const NavLink: FC<INavLinkProps> = ({ href, text }) => (
+export const NavLink: FC<INavLinkProps> = ({ children, href }) => (
   <Link href={href} passHref>
-    <StyledLink>{text}</StyledLink>
+    <StyledLink>{children}</StyledLink>
   </Link>
 );

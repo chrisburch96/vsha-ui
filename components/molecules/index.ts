@@ -1,2 +1,2 @@
-export * from "./navigation/NavigationPanel";
-export * from "./navigation/SocialsPanel";
+export * from "./group/NavigationGroup";
+export * from "./group/SocialsGroup";

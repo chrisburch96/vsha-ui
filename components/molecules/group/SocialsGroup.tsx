@@ -12,17 +12,17 @@ import {
   YoutubeIcon,
 } from "components/atoms";
 
-const SocialsPanelContainer = styled(Row)`
+const SocialsGroupContainer = styled(Row)`
   width: 150px;
 `;
 
-export const SocialsPanel: FC = () => (
-  <SocialsPanelContainer>
+export const SocialsGroup: FC = () => (
+  <SocialsGroupContainer>
     <FacebookIcon />
     <InstagramIcon />
     <SpotifyIcon />
     <TikTokIcon />
     <TwitterIcon />
     <YoutubeIcon />
-  </SocialsPanelContainer>
+  </SocialsGroupContainer>
 );

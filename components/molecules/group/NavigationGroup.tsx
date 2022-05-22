@@ -1,18 +1,13 @@
 import { FC } from "react";
 
-import styled from "styled-components";
-
-import { NavLink, Row } from "components/atoms";
-
-const NavigationGroupContainer = styled(Row)`
-  width: 300px;
-`;
+import { NavLink } from "components/atoms";
+import { FlexContainer } from "components/templates";
 
 export const NavigationGroup: FC = () => (
-  <NavigationGroupContainer>
+  <FlexContainer justifySpaceAround>
     <NavLink href="/">Home</NavLink>
     <NavLink href="/music">Music</NavLink>
     <NavLink href="/news">News</NavLink>
     <NavLink href="/store">Store</NavLink>
-  </NavigationGroupContainer>
+  </FlexContainer>
 );

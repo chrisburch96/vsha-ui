@@ -2,19 +2,28 @@ import { FC } from "react";
 
 import styled from "styled-components";
 
-import { Row } from "components/atoms";
+import { Logo } from "components/atoms";
 import { NavigationGroup, SocialsGroup } from "components/molecules";
+import { FlexContainer, FlexItem } from "components/templates";
 
-const CompactHeaderContainer = styled(Row)`
+const CompactHeaderContainer = styled(FlexContainer)`
   background-color: ${(props) => props.theme.colors.neutral[900]};
-  padding: ${(props) => props.theme.spacing.m};
 `;
 
 export const CompactHeader: FC = () => {
   return (
-    <CompactHeaderContainer>
-      <NavigationGroup />
-      <SocialsGroup />
+    <CompactHeaderContainer alignCenter>
+      <FlexItem grow={1}>
+        <NavigationGroup />
+      </FlexItem>
+      <FlexItem grow={8}>
+        <FlexContainer center>
+          <Logo />
+        </FlexContainer>
+      </FlexItem>
+      <FlexItem grow={1}>
+        <SocialsGroup />
+      </FlexItem>
     </CompactHeaderContainer>
   );
 };

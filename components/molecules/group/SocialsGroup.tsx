@@ -1,28 +1,22 @@
 import { FC } from "react";
 
-import styled from "styled-components";
-
 import {
   FacebookIcon,
   InstagramIcon,
-  Row,
   SpotifyIcon,
   TikTokIcon,
   TwitterIcon,
   YoutubeIcon,
 } from "components/atoms";
-
-const SocialsGroupContainer = styled(Row)`
-  width: 150px;
-`;
+import { FlexContainer } from "components/templates";
 
 export const SocialsGroup: FC = () => (
-  <SocialsGroupContainer>
+  <FlexContainer justifySpaceAround>
     <FacebookIcon />
     <InstagramIcon />
     <SpotifyIcon />
     <TikTokIcon />
     <TwitterIcon />
     <YoutubeIcon />
-  </SocialsGroupContainer>
+  </FlexContainer>
 );

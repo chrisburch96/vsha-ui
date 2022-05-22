@@ -1,6 +1,6 @@
 import { storiesOf } from "@storybook/react";
 
-import { Caption, Heading, Subheading, Text, Title } from "./Typography";
+import { Caption, Heading, Subheading, Text, Title } from "components/atoms";
 
 const text = "Blood starts to crystallise the fragile wings of butterflies";
 

@@ -1,5 +1,7 @@
 import { storiesOf } from "@storybook/react";
 
-import { Navbar } from "components/organisms";
+import { CompactHeader, Navbar } from "components/organisms";
 
-storiesOf("Organisms", module).add("Navbar", () => <Navbar />);
+storiesOf("Organisms/Navbar", module)
+  .add("CompactHeader", () => <CompactHeader />)
+  .add("Navbar", () => <Navbar />);

@@ -7,7 +7,7 @@ import {
   TikTokIcon,
   TwitterIcon,
   YoutubeIcon,
-} from "./Iconography";
+} from "components/atoms";
 
 storiesOf("Atoms/Iconography", module)
   .add("FacebookIcon", () => <FacebookIcon />)

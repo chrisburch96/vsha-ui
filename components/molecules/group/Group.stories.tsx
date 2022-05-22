@@ -1,7 +1,6 @@
 import { storiesOf } from "@storybook/react";
 
-import { NavigationGroup } from "./NavigationGroup";
-import { SocialsGroup } from "./SocialsGroup";
+import { NavigationGroup, SocialsGroup } from "components/molecules";
 
 storiesOf("Molecules/Group", module)
   .add("NavigationGroup", () => <NavigationGroup />)

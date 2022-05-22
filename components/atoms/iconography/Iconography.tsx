@@ -14,7 +14,7 @@ const instagramUrl = "https://www.instagram.com/vshaofficial";
 const twitterUrl = "https://www.twitter.com/vshaofficial";
 
 const StyledIcon = styled(FontAwesomeIcon)`
-  color: ${(props) => props.theme.colors.neutral[100]};
+  color: ${(props) => props.theme.colors.neutral[900]};
   font-size: ${(props) => props.theme.typography.caption.fontSize};
   &:hover,
   :focus {

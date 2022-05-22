@@ -4,7 +4,7 @@ import Link from "next/link";
 import styled from "styled-components";
 
 const StyledLink = styled.a`
-  color: ${(props) => props.theme.colors.neutral[100]};
+  color: ${(props) => props.theme.colors.neutral[900]};
   font-family: ${(props) => props.theme.typography.button.fontFamily};
   font-size: ${(props) => props.theme.typography.button.fontSize};
   font-weight: ${(props) => props.theme.typography.button.fontWeight};

@@ -7,7 +7,8 @@ import { NavigationGroup, SocialsGroup } from "components/molecules";
 import { FlexContainer, FlexItem } from "components/templates";
 
 const CompactHeaderContainer = styled(FlexContainer)`
-  background-color: ${(props) => props.theme.colors.neutral[900]};
+  background-color: ${(props) => props.theme.colors.neutral[100]};
+  height: 56px;
 `;
 
 export const CompactHeader: FC = () => {

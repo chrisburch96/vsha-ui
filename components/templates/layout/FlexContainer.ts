@@ -46,6 +46,7 @@ interface IFlexContainerProps {
 
   // utilities
   center?: boolean; // sets justify-content and align-items to center
+  full?: boolean;
 }
 
 export const FlexContainer = styled.div<IFlexContainerProps>`
@@ -97,7 +98,7 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
   }};
   column-gap: ${({ columnGap }) => columnGap};
   display: ${({ inline }) => (inline ? "inline-flex" : "flex")};
-  flex-basis: 100%;
+  flex-basis: ${({ full }) => full && "100%"};
   flex-direction: ${({ column, columnReverse, row, rowReverse }) => {
     if (column) {
       return "column";
@@ -122,7 +123,7 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "nowrap"; // default
     }
   }};
-  height: 100%;
+  height: ${({ full }) => full && "100%"};
   justify-content: ${({
     center,
     justifyCenter,
@@ -151,5 +152,5 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
     }
   }};
   row-gap: ${({ rowGap }) => rowGap};
-  width: 100%;
+  width: ${({ full }) => full && "100%"};
 `;

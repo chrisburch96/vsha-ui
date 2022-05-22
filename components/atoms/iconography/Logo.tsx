@@ -10,10 +10,14 @@ const LogoContainer = styled(FlexContainer)`
   width: 120px;
 `;
 
-export const Logo: FC = () => {
+interface ILogoProps {
+  inverted?: boolean;
+}
+
+export const Logo: FC<ILogoProps> = ({ inverted }) => {
   return (
     <LogoContainer center>
-      <Title>VSHA</Title>
+      <Title inverted={inverted}>VSHA</Title>
     </LogoContainer>
   );
 };

@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
 interface IDividerProps {
+  inverted?: boolean;
   thickness?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
   vertical?: boolean;
 }
 
 export const Divider = styled.div<IDividerProps>`
-  background-color: ${({ theme }) => theme.colors.neutral[900]};
+  background-color: ${({ inverted, theme }) =>
+    theme.colors.neutral[inverted ? 100 : 900]};
   height: ${({ thickness, theme, vertical }) => {
     if (vertical) {
       return "100%";

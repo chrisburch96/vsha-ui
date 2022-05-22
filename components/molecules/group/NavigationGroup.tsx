@@ -3,11 +3,23 @@ import { FC } from "react";
 import { NavLink } from "components/atoms";
 import { FlexContainer } from "components/templates";
 
-export const NavigationGroup: FC = () => (
+interface INavigationGroupProps {
+  inverted?: boolean;
+}
+
+export const NavigationGroup: FC<INavigationGroupProps> = ({ inverted }) => (
   <FlexContainer center columnGap="s">
-    <NavLink href="/">Home</NavLink>
-    <NavLink href="/music">Music</NavLink>
-    <NavLink href="/news">News</NavLink>
-    <NavLink href="/store">Store</NavLink>
+    <NavLink href="/" inverted={inverted}>
+      Home
+    </NavLink>
+    <NavLink href="/music" inverted={inverted}>
+      Music
+    </NavLink>
+    <NavLink href="/news" inverted={inverted}>
+      News
+    </NavLink>
+    <NavLink href="/store" inverted={inverted}>
+      Store
+    </NavLink>
   </FlexContainer>
 );

@@ -1,3 +1,5 @@
+import { FC } from "react";
+
 import {
   faFacebook,
   faInstagram,
@@ -13,38 +15,52 @@ const facebookUrl = "https://www.facebook.com/vshaofficial";
 const instagramUrl = "https://www.instagram.com/vshaofficial";
 const twitterUrl = "https://www.twitter.com/vshaofficial";
 
-const StyledIcon = styled(FontAwesomeIcon)`
-  color: ${(props) => props.theme.colors.neutral[900]};
-  font-size: ${(props) => props.theme.typography.caption.fontSize};
+interface IStyledIconProps {
+  inverted?: boolean;
+}
+
+const StyledIcon = styled(FontAwesomeIcon)<IStyledIconProps>`
+  color: ${({ inverted, theme }) => theme.colors.neutral[inverted ? 100 : 900]};
+  font-size: ${({ theme }) => theme.typography.caption.fontSize};
   &:hover,
   :focus {
-    color: ${(props) => props.theme.colors.primaryBlue[100]};
+    color: ${({ theme }) => theme.colors.primaryBlue[100]};
   }
   &:active {
-    color: ${(props) => props.theme.colors.primaryBlue[110]};
+    color: ${({ theme }) => theme.colors.primaryBlue[110]};
   }
 `;
 
-export const FacebookIcon = () => (
+interface IIconProps {
+  inverted?: boolean;
+}
+
+export const FacebookIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={facebookUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faFacebook} />
+    <StyledIcon icon={faFacebook} inverted={inverted} />
   </a>
 );
 
-export const InstagramIcon = () => (
+export const InstagramIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={instagramUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faInstagram} />
+    <StyledIcon icon={faInstagram} inverted={inverted} />
   </a>
 );
 
-export const SpotifyIcon = () => <StyledIcon icon={faSpotify} />;
+export const SpotifyIcon: FC<IIconProps> = ({ inverted }) => (
+  <StyledIcon icon={faSpotify} inverted={inverted} />
+);
 
-export const TikTokIcon = () => <StyledIcon icon={faTiktok} />;
+export const TikTokIcon: FC<IIconProps> = ({ inverted }) => (
+  <StyledIcon icon={faTiktok} inverted={inverted} />
+);
 
-export const TwitterIcon = () => (
+export const TwitterIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={twitterUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faTwitter} />
+    <StyledIcon icon={faTwitter} inverted={inverted} />
   </a>
 );
 
-export const YoutubeIcon = () => <StyledIcon icon={faYoutube} />;
+export const YoutubeIcon: FC<IIconProps> = ({ inverted }) => (
+  <StyledIcon icon={faYoutube} inverted={inverted} />
+);

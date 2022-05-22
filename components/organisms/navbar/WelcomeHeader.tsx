@@ -15,14 +15,14 @@ export const WelcomeHeader: FC = () => {
     <WelcomeHeaderContainer center column>
       <FlexItem grow={4}>
         <FlexContainer center full>
-          <Logo />
+          <Logo inverted />
         </FlexContainer>
       </FlexItem>
       <FlexItem grow={1}>
         <FlexContainer alignCenter columnGap="m" full justifySpaceBetween>
-          <NavigationGroup />
-          <Divider vertical />
-          <SocialsGroup />
+          <NavigationGroup inverted />
+          <Divider inverted vertical />
+          <SocialsGroup inverted />
         </FlexContainer>
       </FlexItem>
     </WelcomeHeaderContainer>

@@ -11,7 +11,7 @@ import {
 import { FlexContainer } from "components/templates";
 
 export const SocialsGroup: FC = () => (
-  <FlexContainer justifySpaceAround>
+  <FlexContainer center columnGap="s">
     <FacebookIcon />
     <InstagramIcon />
     <SpotifyIcon />

@@ -1,5 +1,7 @@
 export * from "./button/Button";
 
+export * from "./divider/Divider";
+
 export * from "./iconography/Iconography";
 export * from "./iconography/Logo";
 

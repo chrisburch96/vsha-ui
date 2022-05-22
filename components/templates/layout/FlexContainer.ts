@@ -17,7 +17,7 @@ interface IFlexContainerProps {
   alignStretch?: boolean;
 
   // column-gap
-  columnGap?: number;
+  columnGap?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
 
   // display
   inline?: boolean;
@@ -37,7 +37,7 @@ interface IFlexContainerProps {
   justifyStart?: boolean; // default
 
   // row-gap
-  rowGap?: number;
+  rowGap?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
 
   // flex-wrap
   noWrap?: boolean; // default
@@ -96,7 +96,8 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "stretch";
     }
   }};
-  column-gap: ${({ columnGap }) => columnGap};
+  column-gap: ${({ columnGap, theme }) =>
+    columnGap && theme.spacing[columnGap]};
   display: ${({ inline }) => (inline ? "inline-flex" : "flex")};
   flex-basis: ${({ full }) => full && "100%"};
   flex-direction: ${({ column, columnReverse, row, rowReverse }) => {
@@ -151,6 +152,6 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "flex-start"; // default
     }
   }};
-  row-gap: ${({ rowGap }) => rowGap};
+  row-gap: ${({ rowGap, theme }) => rowGap && theme.spacing[rowGap]};
   width: ${({ full }) => full && "100%"};
 `;

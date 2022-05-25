@@ -20,14 +20,15 @@ interface IStyledIconProps {
 }
 
 const StyledIcon = styled(FontAwesomeIcon)<IStyledIconProps>`
-  color: ${({ inverted, theme }) => theme.colors.neutral[inverted ? 100 : 900]};
+  color: ${({ inverted, theme }) =>
+    theme.palette.neutral[inverted ? 100 : 900]};
   font-size: ${({ theme }) => theme.typography.caption.fontSize};
   &:hover,
   :focus {
-    color: ${({ theme }) => theme.colors.primaryBlue[100]};
+    color: ${({ theme }) => theme.palette.primary[100]};
   }
   &:active {
-    color: ${({ theme }) => theme.colors.primaryBlue[110]};
+    color: ${({ theme }) => theme.palette.primary[110]};
   }
 `;
 

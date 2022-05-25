@@ -11,17 +11,18 @@ import { CompactHeader, WelcomeHeader } from "components/organisms";
 
 const transitionOffset = 50;
 
-interface IFadeProps {
+interface IHeaderContainerProps {
   compact: boolean;
   state: TransitionStatus;
 }
 
-const Fade = styled.div<IFadeProps>`
+const HeaderContainer = styled.div<IHeaderContainerProps>`
   display: ${({ state }) => (state === "exited" ? "none" : "block")};
   opacity: ${({ state }) => (state === "entered" ? 1 : 0)};
-  position: ${({ compact }) => compact && "sticky"};
+  position: fixed;
   top: ${({ compact }) => compact && "10px"};
   transition: 0.5s;
+  width: calc(100% - 20px);
 `;
 
 export const Navbar: FC = () => {
@@ -42,9 +43,9 @@ export const Navbar: FC = () => {
         mountOnEnter
       >
         {(state) => (
-          <Fade compact={compact} state={state}>
+          <HeaderContainer compact={compact} state={state}>
             {compact ? <CompactHeader /> : <WelcomeHeader />}
-          </Fade>
+          </HeaderContainer>
         )}
       </Transition>
     </SwitchTransition>

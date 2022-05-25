@@ -5,7 +5,8 @@ interface ITypographyProps {
 }
 
 const Typography = styled.span<ITypographyProps>`
-  color: ${({ inverted, theme }) => theme.colors.neutral[inverted ? 100 : 900]};
+  color: ${({ inverted, theme }) =>
+    theme.palette.neutral[inverted ? 100 : 900]};
 `;
 
 export const Title = styled(Typography)`

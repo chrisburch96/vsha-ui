@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const TextButton = styled.button`
   background-color: transparent;
   border: none;
-  color: ${({ theme }) => theme.colors.neutral[900]};
+  color: ${({ theme }) => theme.palette.neutral[900]};
   font-family: ${({ theme }) => theme.typography.button.fontFamily};
   font-size: ${({ theme }) => theme.typography.button.fontSize};
   font-weight: ${({ theme }) => theme.typography.button.fontWeight};

@@ -8,7 +8,7 @@ interface IDividerProps {
 
 export const Divider = styled.div<IDividerProps>`
   background-color: ${({ inverted, theme }) =>
-    theme.colors.neutral[inverted ? 100 : 900]};
+    theme.palette.neutral[inverted ? 100 : 900]};
   height: ${({ thickness, theme, vertical }) => {
     if (vertical) {
       return "100%";

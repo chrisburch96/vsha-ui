@@ -1,7 +1,6 @@
 const path = require("path");
 
 module.exports = {
-  stories: ["../components/**/*.stories.tsx"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
@@ -9,7 +8,9 @@ module.exports = {
   ],
   framework: "@storybook/react",
   staticDirs: ["../public"],
+  stories: ["../components/**/*.stories.tsx"],
   webpackFinal: async (config) => {
+    // Resolve absolute imports.
     config.resolve.modules = [path.resolve(__dirname, ".."), "node_modules"];
     return config;
   },

@@ -8,7 +8,8 @@ interface IStyledLinkProps {
 }
 
 const StyledLink = styled.a<IStyledLinkProps>`
-  color: ${({ inverted, theme }) => theme.colors.neutral[inverted ? 100 : 900]};
+  color: ${({ inverted, theme }) =>
+    theme.palette.neutral[inverted ? 100 : 900]};
   font-family: ${({ theme }) => theme.typography.button.fontFamily};
   font-size: ${({ theme }) => theme.typography.button.fontSize};
   font-weight: ${({ theme }) => theme.typography.button.fontWeight};
@@ -16,13 +17,13 @@ const StyledLink = styled.a<IStyledLinkProps>`
   text-decoration: none;
   text-transform: uppercase;
   &:hover {
-    color: ${({ theme }) => theme.colors.primaryBlue[100]};
+    color: ${({ theme }) => theme.palette.primary[100]};
   }
   &:focus {
     text-decoration: underline;
   }
   &:active {
-    color: ${({ theme }) => theme.colors.primaryBlue[110]};
+    color: ${({ theme }) => theme.palette.primary[110]};
   }
 `;
 

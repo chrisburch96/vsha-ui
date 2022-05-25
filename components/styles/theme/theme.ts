@@ -1,13 +1,15 @@
-export const theme = {
-  colors: {
-    primaryBlue: {
+import { ITheme } from "components/styles";
+
+export const theme: ITheme = {
+  palette: {
+    primary: {
       110: "#009dae",
       100: "#00b6c7",
       90: "#1ad0e1",
       10: "#dffcff",
       5: "#effdff",
     },
-    primaryRed: {
+    secondary: {
       110: "#a20005",
       100: "#bb0a1e",
       90: "#d52438",

@@ -31,13 +31,4 @@
       }
     ]
   }
-  // Not sure if we need this yet!
-  // "settings": {
-  //   "import/resolver": {
-  //     "node": {
-  //       "paths": ["src"],
-  //       "extensions": [".js", ".jsx", ".ts", ".tsx"]
-  //     }
-  //   }
-  // }
 }

@@ -17,12 +17,12 @@ const twitterUrl = "https://www.twitter.com/vshaofficial";
 const youtubeUrl = "https://www.youtube.com/channel/UCDePwNU1sZUQZfEPNAQyI9g";
 
 interface IStyledIconProps {
-  inverted?: boolean;
+  $inverted?: boolean; // Transient prop to prevent conflicts with FontAwesome props.
 }
 
 const StyledIcon = styled(FontAwesomeIcon)<IStyledIconProps>`
-  color: ${({ inverted, theme }) =>
-    theme.palette.neutral[inverted ? 100 : 900]};
+  color: ${({ $inverted, theme }) =>
+    theme.palette.neutral[$inverted ? 100 : 900]};
   font-size: ${({ theme }) => theme.typography.caption.fontSize};
   &:hover,
   :focus {
@@ -39,32 +39,32 @@ interface IIconProps {
 
 export const FacebookIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={facebookUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faFacebook} inverted={inverted} />
+    <StyledIcon icon={faFacebook} $inverted={inverted} />
   </a>
 );
 
 export const InstagramIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={instagramUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faInstagram} inverted={inverted} />
+    <StyledIcon icon={faInstagram} $inverted={inverted} />
   </a>
 );
 
 export const SpotifyIcon: FC<IIconProps> = ({ inverted }) => (
-  <StyledIcon icon={faSpotify} inverted={inverted} />
+  <StyledIcon icon={faSpotify} $inverted={inverted} />
 );
 
 export const TikTokIcon: FC<IIconProps> = ({ inverted }) => (
-  <StyledIcon icon={faTiktok} inverted={inverted} />
+  <StyledIcon icon={faTiktok} $inverted={inverted} />
 );
 
 export const TwitterIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={twitterUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faTwitter} inverted={inverted} />
+    <StyledIcon icon={faTwitter} $inverted={inverted} />
   </a>
 );
 
 export const YoutubeIcon: FC<IIconProps> = ({ inverted }) => (
   <a href={youtubeUrl} rel="noreferrer" target="_blank">
-    <StyledIcon icon={faYoutube} inverted={inverted} />
+    <StyledIcon icon={faYoutube} $inverted={inverted} />
   </a>
 );

@@ -14,6 +14,7 @@ import styled from "styled-components";
 const facebookUrl = "https://www.facebook.com/vshaofficial";
 const instagramUrl = "https://www.instagram.com/vshaofficial";
 const twitterUrl = "https://www.twitter.com/vshaofficial";
+const youtubeUrl = "https://www.youtube.com/channel/UCDePwNU1sZUQZfEPNAQyI9g";
 
 interface IStyledIconProps {
   inverted?: boolean;
@@ -63,5 +64,7 @@ export const TwitterIcon: FC<IIconProps> = ({ inverted }) => (
 );
 
 export const YoutubeIcon: FC<IIconProps> = ({ inverted }) => (
-  <StyledIcon icon={faYoutube} inverted={inverted} />
+  <a href={youtubeUrl} rel="noreferrer" target="_blank">
+    <StyledIcon icon={faYoutube} inverted={inverted} />
+  </a>
 );

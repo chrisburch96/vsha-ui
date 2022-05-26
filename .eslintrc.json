@@ -4,10 +4,12 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:import/typescript",
+    "plugin:mdx/recommended",
     "plugin:storybook/recommended",
     "prettier"
   ],
   "rules": {
+    "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-unused-vars": "error",
     "better-styled-components/sort-declarations-alphabetically": "error",
@@ -29,6 +31,7 @@
           "caseInsensitive": true
         }
       }
-    ]
+    ],
+    "mdx/code-blocks": true
   }
 }

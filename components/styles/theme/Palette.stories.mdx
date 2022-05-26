@@ -1,0 +1,45 @@
+import { ColorPalette, ColorItem } from "@storybook/addon-docs";
+
+import { theme } from "components/styles";
+
+<Meta title="Theme/Palette" />
+
+<ColorPalette>
+  <ColorItem
+    title="theme.palette.primary"
+    subtitle="Primary Color"
+    colors={{
+      "100%": theme.palette.primary[100],
+      "110%": theme.palette.primary[110],
+      "90%": theme.palette.primary[90],
+      "10%": theme.palette.primary[10],
+      "5%": theme.palette.primary[5],
+    }}
+  />
+  <ColorItem
+    title="theme.palette.secondary"
+    subtitle="Secondary Color"
+    colors={{
+      "100%": theme.palette.secondary[100],
+      "110%": theme.palette.secondary[110],
+      "90%": theme.palette.secondary[90],
+      "10%": theme.palette.secondary[10],
+      "5%": theme.palette.secondary[5],
+    }}
+  />
+  <ColorItem
+    title="theme.palette.neutral"
+    subtitle="Neutrals"
+    colors={{
+      "100": theme.palette.neutral[100],
+      "200%": theme.palette.neutral[200],
+      "300%": theme.palette.neutral[300],
+      "400%": theme.palette.neutral[400],
+      "500%": theme.palette.neutral[500],
+      "600%": theme.palette.neutral[600],
+      "700%": theme.palette.neutral[700],
+      "800%": theme.palette.neutral[800],
+      "900%": theme.palette.neutral[900],
+    }}
+  />
+</ColorPalette>

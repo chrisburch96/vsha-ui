@@ -1,8 +1,11 @@
 import styled from "styled-components";
+import { Size } from "components/styles";
+
+const defaultThickness = Size.Small;
 
 interface IDividerProps {
   inverted?: boolean;
-  thickness?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
+  thickness?: Size;
   vertical?: boolean;
 }
 
@@ -13,12 +16,12 @@ export const Divider = styled.div<IDividerProps>`
     if (vertical) {
       return "100%";
     } else {
-      return theme.spacing[thickness || "xs"];
+      return theme.spacing[thickness || defaultThickness];
     }
   }};
   width: ${({ thickness, theme, vertical }) => {
     if (vertical) {
-      return theme.spacing[thickness || "xs"];
+      return theme.spacing[thickness || defaultThickness];
     } else {
       return "100%";
     }

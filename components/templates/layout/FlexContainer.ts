@@ -1,6 +1,10 @@
+import { Size } from "components/styles";
 import styled from "styled-components";
 
 interface IFlexContainerProps {
+  // background-color
+  backgroundColor?: string;
+
   // align-content
   contentCenter?: boolean;
   contentEnd?: boolean;
@@ -17,7 +21,7 @@ interface IFlexContainerProps {
   alignStretch?: boolean;
 
   // column-gap
-  columnGap?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
+  columnGap?: Size;
 
   // display
   inline?: boolean;
@@ -28,6 +32,14 @@ interface IFlexContainerProps {
   row?: boolean; // default
   rowReverse?: boolean;
 
+  // flex-wrap
+  noWrap?: boolean; // default
+  wrap?: boolean;
+  wrapReverse?: boolean;
+
+  // height
+  height?: string;
+
   // justify-content
   justifyCenter?: boolean;
   justifyEnd?: boolean;
@@ -37,12 +49,10 @@ interface IFlexContainerProps {
   justifyStart?: boolean; // default
 
   // row-gap
-  rowGap?: "xxs" | "xs" | "s" | "m" | "l" | "xl";
+  rowGap?: Size;
 
-  // flex-wrap
-  noWrap?: boolean; // default
-  wrap?: boolean;
-  wrapReverse?: boolean;
+  // width
+  width?: string;
 
   // utilities
   center?: boolean; // sets justify-content and align-items to center
@@ -96,6 +106,7 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "stretch";
     }
   }};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   column-gap: ${({ columnGap, theme }) =>
     columnGap && theme.spacing[columnGap]};
   display: ${({ inline }) => (inline ? "inline-flex" : "flex")};
@@ -124,7 +135,7 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "nowrap"; // default
     }
   }};
-  height: ${({ full }) => full && "100%"};
+  height: ${({ full, height }) => height ?? (full && "100%")};
   justify-content: ${({
     center,
     justifyCenter,
@@ -153,5 +164,5 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
     }
   }};
   row-gap: ${({ rowGap, theme }) => rowGap && theme.spacing[rowGap]};
-  width: ${({ full }) => full && "100%"};
+  width: ${({ full, width }) => width ?? (full && "100%")};
 `;

@@ -1,10 +1,10 @@
-enum Color {
+export enum Color {
   Primary = "primary",
   Secondary = "secondary",
   Neutral = "neutral",
 }
 
-enum Size {
+export enum Size {
   XXSmall = "xxs",
   XSmall = "xs",
   Small = "s",

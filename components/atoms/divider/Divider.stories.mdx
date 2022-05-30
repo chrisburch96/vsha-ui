@@ -1,0 +1,33 @@
+import { Canvas, Meta, Story } from "@storybook/addon-docs";
+
+import { Divider } from "components/atoms";
+import { theme, Size } from "components/styles";
+import { FlexContainer } from "components/templates";
+
+<Meta title="Atoms/Divider" component={Divider} />
+
+# Divider
+
+## Thickness
+
+<Canvas withToolbar>
+  <Story name="Thickness">
+    <FlexContainer column rowGap={Size.Medium}>
+      {Object.values(Size).map((thickness) => (
+        <Divider key={thickness} thickness={thickness} />
+      ))}
+    </FlexContainer>
+  </Story>
+</Canvas>
+
+## Vertical
+
+<Canvas withToolbar>
+  <Story name="Vertical">
+    <FlexContainer columnGap={Size.Medium} height="300px" justifySpaceBetween>
+      {Object.values(Size).map((thickness) => (
+        <Divider key={thickness} thickness={thickness} vertical />
+      ))}
+    </FlexContainer>
+  </Story>
+</Canvas>

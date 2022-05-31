@@ -1,5 +1,6 @@
-import { Size } from "components/styles";
 import styled from "styled-components";
+
+import { Pixel, Size } from "components/styles";
 
 interface IFlexContainerProps {
   // background-color
@@ -38,7 +39,7 @@ interface IFlexContainerProps {
   wrapReverse?: boolean;
 
   // height
-  height?: string;
+  height?: number;
 
   // justify-content
   justifyCenter?: boolean;
@@ -52,7 +53,7 @@ interface IFlexContainerProps {
   rowGap?: Size;
 
   // width
-  width?: string;
+  width?: number;
 
   // utilities
   center?: boolean; // sets justify-content and align-items to center
@@ -135,7 +136,7 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
       return "nowrap"; // default
     }
   }};
-  height: ${({ full, height }) => height ?? (full && "100%")};
+  height: ${({ full, height }) => Pixel(height) ?? (full && "100%")};
   justify-content: ${({
     center,
     justifyCenter,
@@ -164,5 +165,5 @@ export const FlexContainer = styled.div<IFlexContainerProps>`
     }
   }};
   row-gap: ${({ rowGap, theme }) => rowGap && theme.spacing[rowGap]};
-  width: ${({ full, width }) => width ?? (full && "100%")};
+  width: ${({ full, width }) => Pixel(width) ?? (full && "100%")};
 `;

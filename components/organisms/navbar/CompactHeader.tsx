@@ -9,12 +9,11 @@ import { FlexContainer, FlexItem } from "components/templates";
 const CompactHeaderContainer = styled(FlexContainer)`
   background-color: ${({ theme }) => theme.palette.neutral[100]};
   border-radius: 5px;
-  height: 56px;
 `;
 
 export const CompactHeader: FC = () => {
   return (
-    <CompactHeaderContainer alignCenter>
+    <CompactHeaderContainer alignCenter height={56}>
       <FlexItem grow={1}>
         <NavigationGroup />
       </FlexItem>

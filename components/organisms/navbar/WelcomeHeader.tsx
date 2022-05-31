@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { Divider, Logo } from "components/atoms";
 import { NavigationGroup, SocialsGroup } from "components/molecules";
+import { Size } from "components/styles";
 import { FlexContainer, FlexItem } from "components/templates";
 
 const WelcomeHeaderContainer = styled(FlexContainer)`
@@ -19,7 +20,12 @@ export const WelcomeHeader: FC = () => {
         </FlexContainer>
       </FlexItem>
       <FlexItem grow={1}>
-        <FlexContainer alignCenter columnGap="m" full justifySpaceBetween>
+        <FlexContainer
+          alignCenter
+          columnGap={Size.Medium}
+          full
+          justifySpaceBetween
+        >
           <NavigationGroup inverted />
           <Divider inverted vertical />
           <SocialsGroup inverted />

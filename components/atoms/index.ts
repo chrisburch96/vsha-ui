@@ -1,5 +1,7 @@
 export * from "./button/Button";
 
+export * from "./cursor/Cursor";
+
 export * from "./divider/Divider";
 
 export * from "./iconography/Iconography";

@@ -1,14 +1,7 @@
 import { FC } from "react";
 
-import styled from "styled-components";
-
 import { Title } from "components/atoms";
 import { FlexContainer } from "components/templates";
-
-const LogoContainer = styled(FlexContainer)`
-  height: 50px;
-  width: 120px;
-`;
 
 interface ILogoProps {
   inverted?: boolean;
@@ -16,8 +9,8 @@ interface ILogoProps {
 
 export const Logo: FC<ILogoProps> = ({ inverted }) => {
   return (
-    <LogoContainer center>
+    <FlexContainer center height={50} width={120}>
       <Title inverted={inverted}>VSHA</Title>
-    </LogoContainer>
+    </FlexContainer>
   );
 };

@@ -24,7 +24,7 @@ import { FlexContainer } from "components/templates";
 
 <Canvas withToolbar>
   <Story name="Vertical">
-    <FlexContainer columnGap={Size.Medium} height="300px" justifySpaceBetween>
+    <FlexContainer columnGap={Size.Medium} height={300} justifySpaceBetween>
       {Object.values(Size).map((thickness) => (
         <Divider key={thickness} thickness={thickness} vertical />
       ))}

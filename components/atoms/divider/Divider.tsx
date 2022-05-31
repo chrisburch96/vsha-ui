@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { Size } from "components/styles";
 
 const defaultThickness = Size.Small;

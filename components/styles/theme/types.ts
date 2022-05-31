@@ -13,6 +13,8 @@ export enum Size {
   XLarge = "xl",
 }
 
+export const Pixel = (value?: number | null) => value && `${value}px`;
+
 export interface IColor {
   [percentage: number]: string;
 }

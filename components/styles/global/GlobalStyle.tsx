@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     src: url("/fonts/Caveat.ttf");
   }
 
+  * {
+    cursor: none;
+  }
+
   body {
     background: ${({ theme }) => theme.palette.neutral[700]};
     font-family: Open-Sans, Helvetica, Sans-Serif;

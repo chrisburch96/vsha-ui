@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { NavLink } from "components/atoms";
+import { Size } from "components/styles";
 import { FlexContainer } from "components/templates";
 
 interface INavigationGroupProps {
@@ -8,7 +9,7 @@ interface INavigationGroupProps {
 }
 
 export const NavigationGroup: FC<INavigationGroupProps> = ({ inverted }) => (
-  <FlexContainer center columnGap="s">
+  <FlexContainer center columnGap={Size.Small}>
     <NavLink href="/" inverted={inverted}>
       Home
     </NavLink>

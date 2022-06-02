@@ -1,15 +1,22 @@
 import styled from "styled-components";
 
 import { Pixel } from "components/styles";
-import { IMousePosition, useMousePosition } from "hooks";
+import { useMouseDown, useMousePosition } from "hooks";
 
-export const Cursor = styled.div.attrs<IMousePosition>(({ x, y }) => ({
+interface ICursorProps {
+  mouseDown: boolean;
+  x: number | null;
+  y: number | null;
+}
+
+export const Cursor = styled.div.attrs<ICursorProps>(({ x, y }) => ({
   style: {
     left: Pixel(x),
     top: Pixel(y),
   },
-}))<IMousePosition>`
-  background-color: ${({ theme }) => theme.palette.neutral[100]};
+}))<ICursorProps>`
+  background-color: ${({ mouseDown, theme }) =>
+    mouseDown ? theme.palette.secondary[100] : theme.palette.neutral[100]};
   border-radius: 50%;
   display: ${({ x, y }) => (!x || !y) && "none"};
   height: 8px;
@@ -20,6 +27,7 @@ export const Cursor = styled.div.attrs<IMousePosition>(({ x, y }) => ({
 `;
 
 export const CustomCursor = () => {
-  const position = useMousePosition();
-  return <Cursor {...position}></Cursor>;
+  const mouseDown = useMouseDown();
+  const mousePosition = useMousePosition();
+  return <Cursor mouseDown={mouseDown} {...mousePosition}></Cursor>;
 };

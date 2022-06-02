@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 
-export interface IMousePosition {
-  x: number | null;
-  y: number | null;
-}
+import { IPosition } from "hooks";
 
 export const useMousePosition = () => {
-  const [mousePosition, setMousePosition] = useState<IMousePosition>({
+  const [mousePosition, setMousePosition] = useState<IPosition>({
     x: null,
     y: null,
   });

@@ -2,21 +2,25 @@ import { FC } from "react";
 
 import styled from "styled-components";
 
-import { Divider, Logo } from "components/atoms";
+import { Divider, WelcomeLogo } from "components/atoms";
 import { NavigationGroup, SocialsGroup } from "components/molecules";
 import { Size } from "components/styles";
 import { FlexContainer, FlexItem } from "components/templates";
 
 const WelcomeHeaderContainer = styled(FlexContainer)`
-  height: 200px;
+  height: 70vh;
 `;
 
-export const WelcomeHeader: FC = () => {
+interface IWelcomeHeaderProps {
+  inverted?: boolean;
+}
+
+export const WelcomeHeader: FC<IWelcomeHeaderProps> = ({ inverted }) => {
   return (
     <WelcomeHeaderContainer center column>
       <FlexItem grow={4}>
         <FlexContainer center full>
-          <Logo inverted />
+          <WelcomeLogo inverted={inverted} />
         </FlexContainer>
       </FlexItem>
       <FlexItem grow={1}>
@@ -26,9 +30,9 @@ export const WelcomeHeader: FC = () => {
           full
           justifySpaceBetween
         >
-          <NavigationGroup inverted />
-          <Divider inverted vertical />
-          <SocialsGroup inverted />
+          <NavigationGroup inverted={inverted} />
+          <Divider inverted={inverted} vertical />
+          <SocialsGroup inverted={inverted} />
         </FlexContainer>
       </FlexItem>
     </WelcomeHeaderContainer>

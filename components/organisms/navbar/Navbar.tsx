@@ -23,7 +23,7 @@ const HeaderContainer = styled.div<IHeaderContainerProps>`
   position: fixed;
   top: ${({ shrink }) => shrink && "10px"};
   transition: 0.5s;
-  width: calc(100% - 20px);
+  width: calc(100% - 16px);
 `;
 
 export const Navbar: FC = () => {
@@ -42,7 +42,7 @@ export const Navbar: FC = () => {
       >
         {(state) => (
           <HeaderContainer shrink={shrink} state={state}>
-            {shrink ? <CompactHeader /> : <WelcomeHeader />}
+            {shrink ? <CompactHeader /> : <WelcomeHeader inverted />}
           </HeaderContainer>
         )}
       </Transition>

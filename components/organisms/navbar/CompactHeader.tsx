@@ -2,28 +2,33 @@ import { FC } from "react";
 
 import styled from "styled-components";
 
-import { Logo } from "components/atoms";
+import { CompactLogo } from "components/atoms";
 import { NavigationGroup, SocialsGroup } from "components/molecules";
 import { FlexContainer, FlexItem } from "components/templates";
 
-const CompactHeaderContainer = styled(FlexContainer)`
-  background-color: ${({ theme }) => theme.palette.neutral[100]};
+interface ICompactHeaderProps {
+  inverted?: boolean;
+}
+
+const CompactHeaderContainer = styled(FlexContainer)<ICompactHeaderProps>`
+  background-color: ${({ inverted, theme }) =>
+    theme.palette.neutral[inverted ? 900 : 100]};
   border-radius: 5px;
 `;
 
-export const CompactHeader: FC = () => {
+export const CompactHeader: FC<ICompactHeaderProps> = ({ inverted }) => {
   return (
-    <CompactHeaderContainer alignCenter height={56}>
+    <CompactHeaderContainer alignCenter height={56} inverted={inverted}>
       <FlexItem grow={1}>
-        <NavigationGroup />
+        <NavigationGroup inverted={inverted} />
       </FlexItem>
       <FlexItem grow={8}>
         <FlexContainer center>
-          <Logo />
+          <CompactLogo inverted={inverted} />
         </FlexContainer>
       </FlexItem>
       <FlexItem grow={1}>
-        <SocialsGroup />
+        <SocialsGroup inverted={inverted} />
       </FlexItem>
     </CompactHeaderContainer>
   );

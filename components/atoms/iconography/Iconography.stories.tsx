@@ -3,7 +3,7 @@ import { storiesOf } from "@storybook/react";
 import {
   FacebookIcon,
   InstagramIcon,
-  Logo,
+  WelcomeLogo,
   SpotifyIcon,
   TikTokIcon,
   TwitterIcon,
@@ -11,7 +11,7 @@ import {
 } from "components/atoms";
 
 storiesOf("Atoms/Iconography", module)
-  .add("Logo", () => <Logo />)
+  .add("Logo", () => <WelcomeLogo />)
   .add("FacebookIcon", () => <FacebookIcon />)
   .add("InstagramIcon", () => <InstagramIcon />)
   .add("SpotifyIcon", () => <SpotifyIcon />)
